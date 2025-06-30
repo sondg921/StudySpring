@@ -40,6 +40,7 @@ class MemberServiceTest {
         Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
     }
 
+    // 예외 테스트
     @Test
     // 테스트 작성에서는 한글로도 많이 작성함
     public void 중복_회원_예외() {
@@ -55,8 +56,7 @@ class MemberServiceTest {
         // memberService.join(member2)를 실행하면 앞의 예외가 발생해야 한다는 코드
         assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
-
-/*
+/* 아래와 같이해도 무방
         try {
             memberService.join(member2);
             fail();
